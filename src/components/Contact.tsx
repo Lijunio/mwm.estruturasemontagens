@@ -8,6 +8,10 @@ const Contact: React.FC = () => {
     "Olá! Estava visitando seu site e gostaria de saber mais sobre os serviços oferecidos pela MWM Engenharia para avaliar como podemos trabalhar juntos. Poderia me ajudar com mais informações?"
   )}`;
 
+  const handleWhatsAppClick = () => {
+    window.location.href = whatsappLink;
+  };
+
   return (
     <Box sx={{ color: "white", textAlign: "center", p: 4 }}>
       <Typography
@@ -30,6 +34,10 @@ const Contact: React.FC = () => {
             padding: "10px 20px",
             fontSize: { xs: "0.5rem", sm: "1rem" },
             "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
+            transition: "transform 0.3s ease",
+            "&:active": {
+              transform: "scale(0.98)", // Animação de clique
+            },
           }}
         >
           (31) 99150-2088
@@ -37,9 +45,7 @@ const Contact: React.FC = () => {
 
         <Button
           startIcon={<WhatsAppIcon />}
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={handleWhatsAppClick}
           sx={{
             color: "white",
             border: "1px solid white",
@@ -47,6 +53,10 @@ const Contact: React.FC = () => {
             padding: "10px 20px",
             fontSize: { xs: "0.5rem", sm: "1rem" }, 
             "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
+            transition: "transform 0.3s ease",
+            "&:active": {
+              transform: "scale(0.98)", // Animação de clique
+            },
           }}
         >
           Entre em contato pelo WhatsApp
