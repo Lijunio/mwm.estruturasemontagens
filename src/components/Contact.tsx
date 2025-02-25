@@ -8,17 +8,13 @@ const Contact: React.FC = () => {
     "Olá! Estava visitando seu site e gostaria de saber mais sobre os serviços oferecidos pela MWM Engenharia para avaliar como podemos trabalhar juntos. Poderia me ajudar com mais informações?"
   )}`;
 
-  const handleWhatsAppClick = () => {
-    window.location.href = whatsappLink;
-  };
-
   return (
     <Box sx={{ color: "white", textAlign: "center", p: 4 }}>
       <Typography
         variant="h3"
         gutterBottom
         sx={{
-          fontSize: { xs: "1.6rem", sm: "2rem", md: "3rem" }, 
+          fontSize: { xs: "1.6rem", sm: "2rem", md: "3rem" },
         }}
       >
         Contato
@@ -26,7 +22,7 @@ const Contact: React.FC = () => {
       <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, mt: 4 }}>
         <Button
           startIcon={<PhoneIcon />}
-          href="tel:+5531991502088" 
+          href="tel:+5531991502088"
           sx={{
             color: "white",
             border: "1px solid white",
@@ -34,10 +30,6 @@ const Contact: React.FC = () => {
             padding: "10px 20px",
             fontSize: { xs: "0.5rem", sm: "1rem" },
             "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
-            transition: "transform 0.3s ease",
-            "&:active": {
-              transform: "scale(0.98)", // Animação de clique
-            },
           }}
         >
           (31) 99150-2088
@@ -45,23 +37,45 @@ const Contact: React.FC = () => {
 
         <Button
           startIcon={<WhatsAppIcon />}
-          onClick={handleWhatsAppClick}
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
           sx={{
             color: "white",
             border: "1px solid white",
             borderRadius: 2,
             padding: "10px 20px",
-            fontSize: { xs: "0.5rem", sm: "1rem" }, 
+            fontSize: { xs: "0.5rem", sm: "1rem" },
             "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
-            transition: "transform 0.3s ease",
-            "&:active": {
-              transform: "scale(0.98)", // Animação de clique
-            },
           }}
         >
           Entre em contato pelo WhatsApp
         </Button>
       </Box>
+
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 4 }}>
+  <Typography
+    variant="body1"
+    sx={{ color: "white", fontSize: { xs: "0.8rem", sm: "1rem" } }}
+  >
+    &copy; 2025 MWM. Desenvolvido por{" "}
+    <a
+      href="https://elijunio.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        color: "white",
+        textDecoration: "none",
+        transition: "color 0.3s", 
+      }}
+      onMouseOver={(e) => e.currentTarget.style.color = "blue"}  
+      onMouseOut={(e) => e.currentTarget.style.color = "white"}  
+    >
+      Elias Ribeiro
+    </a>
+  </Typography>
+</Box>
+
     </Box>
   );
 };
